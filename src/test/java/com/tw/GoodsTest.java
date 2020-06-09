@@ -12,7 +12,8 @@ public class GoodsTest {
         var goods = Goods.builder().quality(50).build();
         var oldQuality = goods.getQuality();
 
-        var newQuality = goods.updateQuality();
+        goods.updateQuality();
+        var newQuality = goods.getQuality();
 
         assertThat(newQuality).isNotEqualTo(oldQuality);
     }

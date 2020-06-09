@@ -8,8 +8,7 @@ import lombok.Getter;
 public class Goods {
     private Integer quality;
 
-    public Integer updateQuality() {
+    public void updateQuality() {
         quality--;
-        return this.quality;
     }
 }
