@@ -10,6 +10,9 @@ public class Goods {
     private Integer sellIn;
 
     public void updateQuality() {
+        if (quality <=0) {
+            return;
+        }
         quality--;
     }
 
