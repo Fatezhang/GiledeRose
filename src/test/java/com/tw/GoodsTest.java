@@ -4,6 +4,7 @@ package com.tw;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class GoodsTest {
 
@@ -16,5 +17,16 @@ public class GoodsTest {
         var newQuality = goods.getQuality();
 
         assertThat(newQuality).isNotEqualTo(oldQuality);
+    }
+
+    @Test
+    public void shouldUpdateSellInSuccessfully() {
+        var goods = Goods.builder().sellIn(10).build();
+        var oldQuality = goods.getSellIn();
+
+        goods.updateSellIn();
+        var newSellIn = goods.getSellIn();
+
+        assertThat(newSellIn).isNotEqualTo(oldQuality);
     }
 }

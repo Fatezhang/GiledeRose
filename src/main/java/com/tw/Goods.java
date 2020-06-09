@@ -7,8 +7,13 @@ import lombok.Getter;
 @Getter
 public class Goods {
     private Integer quality;
+    private Integer sellIn;
 
     public void updateQuality() {
         quality--;
+    }
+
+    public void updateSellIn() {
+        sellIn--;
     }
 }
