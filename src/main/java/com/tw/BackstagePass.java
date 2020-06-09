@@ -10,7 +10,18 @@ public class BackstagePass {
     private Integer sellIn;
 
     public void updateQuality() {
-        quality--;
+        if (quality >= 50) {
+            return;
+        }
+        if (sellIn <= 10 && sellIn > 5) {
+            quality += 2;
+        }
+        if (sellIn<=5 && sellIn > 0) {
+            quality += 3;
+        }
+        if (sellIn<=0) {
+            quality=0;
+        }
     }
 
     public void updateSellIn() {
