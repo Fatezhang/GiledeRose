@@ -38,4 +38,24 @@ public class GoodsTest {
 
         assertThat(newQuality).isEqualTo(0);
     }
+
+    @Test
+    public void shouldDecreaseOneWhenSellInGreaterOrEqualThanZero() {
+        var goods = Goods.builder().quality(50).sellIn(10).build();
+
+        goods.updateQuality();
+        var newQuality = goods.getQuality();
+
+        assertThat(newQuality).isEqualTo(49);
+    }
+
+    @Test
+    public void shouldDoubleSlideWhenSellInLessThanZero() {
+        var goods = Goods.builder().quality(25).sellIn(-1).build();
+
+        goods.updateQuality();
+        var newQuality = goods.getQuality();
+
+        assertThat(newQuality).isEqualTo(12);
+    }
 }

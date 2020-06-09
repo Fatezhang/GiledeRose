@@ -13,6 +13,10 @@ public class Goods {
         if (quality <=0) {
             return;
         }
+        if (sellIn < 0){
+            quality/=2;
+            return;
+        }
         quality--;
     }
 
