@@ -9,7 +9,7 @@ public class GoodsTest {
 
     @Test
     public void shouldUpdateQualitySuccessfully() {
-        var goods = Goods.builder().quality(50).build();
+        var goods = Goods.builder().quality(50).sellIn(10).build();
         var oldQuality = goods.getQuality();
 
         goods.updateQuality();
